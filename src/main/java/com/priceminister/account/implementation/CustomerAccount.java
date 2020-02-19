@@ -29,4 +29,8 @@ public class CustomerAccount implements Account {
         this.balance -= withdrawnAmount;
         return this.balance;
     }
+    
+    private void checkAmountGreaterThanZero(double amount) {
+    	
+    }
 }
