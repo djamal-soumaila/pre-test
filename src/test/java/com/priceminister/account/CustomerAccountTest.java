@@ -36,7 +36,7 @@ public class CustomerAccountTest {
      */
     @Test
     public void testAccountWithoutMoneyHasZeroBalance() {
-        fail("not yet implemented");
+        assertEquals(0.0, customerAccount.getBalance(), 0.0);
     }
     
     /**

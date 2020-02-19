@@ -25,5 +25,5 @@ public interface Account {
      * Gets the current account balance.
      * @return the account's balance
      */
-    public Double getBalance();
+    public double getBalance();
 }
