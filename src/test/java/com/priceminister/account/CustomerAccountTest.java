@@ -62,4 +62,16 @@ public class CustomerAccountTest {
     }
     
     // Also implement missing unit tests for the above functionalities.
+
+    /**
+	 * Withdraw money to the account and checks that the new balance is as expected.
+     * @throws IllegalBalanceException 
+     */
+    @Test
+    public void testWithdrawAndReportBalance() throws IllegalBalanceException {
+    	customerAccount.add(100.0);
+    	double balance = customerAccount.getBalance();
+    	double withdrawnAmount = balance/2;
+    	assertEquals(balance / 2, customerAccount.withdrawAndReportBalance(withdrawnAmount), 0.0);
+    }
 }
