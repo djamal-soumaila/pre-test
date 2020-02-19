@@ -21,7 +21,6 @@ import com.priceminister.account.implementation.*;
 public class CustomerAccountTest {
     
     Account customerAccount;
-    AccountRule rule;
 
     /**
      * @throws java.lang.Exception
@@ -53,10 +52,13 @@ public class CustomerAccountTest {
     /**
      * Tests that an illegal withdrawal throws the expected exception.
      * Use the logic contained in CustomerAccountRule; feel free to refactor the existing code.
+     * @throws IllegalBalanceException 
      */
-    @Test
-    public void testWithdrawAndReportBalanceIllegalBalance() {
-        fail("not yet implemented");
+    @Test(expected = IllegalBalanceException.class)
+    public void testWithdrawAndReportBalanceIllegalBalance() throws IllegalBalanceException {
+    	double balance = customerAccount.getBalance();
+    	double withdrawnAmount = balance + 40.1;
+    	customerAccount.withdrawAndReportBalance(withdrawnAmount, new CustomerAccountRule());
     }
     
     // Also implement missing unit tests for the above functionalities.
