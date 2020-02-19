@@ -12,6 +12,7 @@ public class CustomerAccount implements Account {
 		this.rule = rule;
 	}
     public void add(double addedAmount) {
+    	this.checkAmountGreaterThanZero(addedAmount);
     	this.balance += addedAmount;
     }
 
@@ -25,12 +26,13 @@ public class CustomerAccount implements Account {
     }
 
     private double withdraw(double withdrawnAmount) throws IllegalBalanceException {
+    	this.checkAmountGreaterThanZero(withdrawnAmount);
         this.rule.withdrawPermitted(this.balance - withdrawnAmount);
         this.balance -= withdrawnAmount;
         return this.balance;
     }
     
     private void checkAmountGreaterThanZero(double amount) {
-    	
+    	if(amount < 0) throw new IllegalArgumentException("Amount must be greater than zero");
     }
 }
