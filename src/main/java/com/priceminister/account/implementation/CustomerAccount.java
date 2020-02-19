@@ -25,11 +25,10 @@ public class CustomerAccount implements Account {
         return this.getBalance();
     }
 
-    private double withdraw(double withdrawnAmount) throws IllegalBalanceException {
+    private void withdraw(double withdrawnAmount) throws IllegalBalanceException {
     	this.checkAmountGreaterThanZero(withdrawnAmount);
         this.rule.withdrawPermitted(this.balance - withdrawnAmount);
         this.balance -= withdrawnAmount;
-        return this.balance;
     }
     
     private void checkAmountGreaterThanZero(double amount) {
