@@ -10,6 +10,7 @@ public interface AccountRule {
      * for the specific type of account.
      * @param resultingAccountBalance - the amount resulting of the withdrawal
      * @return true if the operation is permitted, false otherwise
+     * @throws IllegalBalanceException 
      */
-    boolean withdrawPermitted(Double resultingAccountBalance);
+    void withdrawPermitted(double resultingAccountBalance) throws IllegalBalanceException;
 }

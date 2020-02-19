@@ -18,7 +18,7 @@ public interface Account {
      * @return the remaining account balance
      * @throws IllegalBalanceException if the withdrawal leaves the account with a forbidden balance
      */
-    public Double withdrawAndReportBalance(Double withdrawnAmount) throws IllegalBalanceException;
+    public double withdrawAndReportBalance(double withdrawnAmount) throws IllegalBalanceException;
     
     /**
      * Gets the current account balance.

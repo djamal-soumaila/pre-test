@@ -22,8 +22,8 @@ public class CustomerAccountRule implements AccountRule {
     /* (non-Javadoc)
      * @see com.priceminister.account.AccountRule#withdrawPermitted(java.lang.Double)
      */
-    public boolean withdrawPermitted(Double resultingAccountBalance) {
-        return resultingAccountBalance >= 0;
+    public void withdrawPermitted(double resultingAccountBalance) throws IllegalBalanceException {
+        if(resultingAccountBalance < 0) throw new IllegalBalanceException(resultingAccountBalance);
     }
 
 }

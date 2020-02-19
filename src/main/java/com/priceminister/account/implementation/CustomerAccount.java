@@ -19,14 +19,14 @@ public class CustomerAccount implements Account {
         return this.balance;
     }
 
-    public Double withdrawAndReportBalance(Double withdrawnAmount) throws IllegalBalanceException {
-        if(this.rule.withdrawPermitted(this.balance - withdrawnAmount)) {
-        	this.balance -= withdrawnAmount;
-        }
-        else {
-        	throw new IllegalBalanceException(this.balance - withdrawnAmount);
-        }
-        return this.balance;
+    public double withdrawAndReportBalance(double withdrawnAmount) throws IllegalBalanceException {
+        this.withdraw(withdrawnAmount);
+        return this.getBalance();
     }
 
+    private double withdraw(double withdrawnAmount) throws IllegalBalanceException {
+        this.rule.withdrawPermitted(this.balance - withdrawnAmount);
+        this.balance -= withdrawnAmount;
+        return this.balance;
+    }
 }

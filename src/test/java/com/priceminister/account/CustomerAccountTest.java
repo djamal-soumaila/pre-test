@@ -27,13 +27,7 @@ public class CustomerAccountTest {
      */
     @Before
     public void setUp() throws Exception {
-        customerAccount = new CustomerAccount(new AccountRule() {
-			
-			public boolean withdrawPermitted(Double resultingAccountBalance) {
-				// TODO Auto-generated method stub
-				return false;
-			}
-		});
+        customerAccount = new CustomerAccount(new CustomerAccountRule());
     }
     
     /**
@@ -68,5 +62,4 @@ public class CustomerAccountTest {
     }
     
     // Also implement missing unit tests for the above functionalities.
-
 }
