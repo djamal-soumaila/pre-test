@@ -7,8 +7,8 @@ public class CustomerAccount implements Account {
 
 	private double balance = 0.0;
 	
-    public void add(Double addedAmount) {
-        // TODO Auto-generated method stub
+    public void add(double addedAmount) {
+    	this.balance += addedAmount;
     }
 
     public double getBalance() {
