@@ -15,11 +15,10 @@ public interface Account {
     /**
      * Withdraws money from the account.
      * @param withdrawnAmount - the money to withdraw
-     * @param rule - the AccountRule that defines which balance is allowed for this account
      * @return the remaining account balance
      * @throws IllegalBalanceException if the withdrawal leaves the account with a forbidden balance
      */
-    public Double withdrawAndReportBalance(Double withdrawnAmount, AccountRule rule) throws IllegalBalanceException;
+    public Double withdrawAndReportBalance(Double withdrawnAmount) throws IllegalBalanceException;
     
     /**
      * Gets the current account balance.

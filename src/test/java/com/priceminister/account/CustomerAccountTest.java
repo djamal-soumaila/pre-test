@@ -27,7 +27,13 @@ public class CustomerAccountTest {
      */
     @Before
     public void setUp() throws Exception {
-        customerAccount = new CustomerAccount();
+        customerAccount = new CustomerAccount(new AccountRule() {
+			
+			public boolean withdrawPermitted(Double resultingAccountBalance) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+		});
     }
     
     /**
@@ -58,7 +64,7 @@ public class CustomerAccountTest {
     public void testWithdrawAndReportBalanceIllegalBalance() throws IllegalBalanceException {
     	double balance = customerAccount.getBalance();
     	double withdrawnAmount = balance + 40.1;
-    	customerAccount.withdrawAndReportBalance(withdrawnAmount, new CustomerAccountRule());
+    	customerAccount.withdrawAndReportBalance(withdrawnAmount);
     }
     
     // Also implement missing unit tests for the above functionalities.
